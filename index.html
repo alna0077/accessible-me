@@ -14,7 +14,7 @@
 
 <body>
   <div class="container">
-    <div class="site-header">
+    <header class="site-header">
       <h1>Jam Box Studios</h1>
       <div class="main-nav">
         <ul>
@@ -24,41 +24,70 @@
           <li><a href="#">Studio</a></li>
         </ul>
       </div>
-      <img src="https://placekitten.com/1200/900" class="banner">
-    </div>
-    <div class="main-content">
-      <h1>Welcome to Jam Box</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
+      <!-- adding alt to img element -->
+      <img src="https://placekitten.com/1200/900" class="banner" alt="kitten">
+    </header>
+    <main class="main-content">
+      <h2>Welcome to Jam Box</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa
+        eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio
+        quia veritatis.</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam
+        omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto
+        error voluptatibus.</p>
       <div class="owner">
-        <h1>Meet the owner</h1>
-        <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
+        <h3>Meet the owner</h3>
+
+        <ul itemscope itemtype="https://schema.org/Person">
+          <li itemprop="name">John Doe</li>  
+          <li itemprop="jobTitle">CEO</li>
+          <li itemprop="email">johnjoe@jambox.ca</li>
+          <li itemprop="telephone">613-000-0000</li>
+          <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="streetAddress">Jambox Studios, 123 Guitar Road, </span>
+            <span itemprop="addressLocality">Musicville, </span>
+            <span itemprop="addressCountry"> Danceistan</span>.
+            <span itemprop="postalCode">B3T 0L0</span>
+          </li>
         </ul>
-        <h1>Address</h1>
-        <p>
-          Jambox Studios
-          123 Guitar Road,
-          Musicville, Danceistan
-          B3T 0L0
-        </p>
-      </div>
+ 
       <div class="contact-section">
-        <h1>Contact Us</h1>
-        <form action="thanks.html">
-          <label>Full Name</label>
-          <input type="text" placeholder="Full Name">
-          <input type="text" placeholder="Email">
-          <input type="text" placeholder="Subject">
-          <b>Your Message</b>
-          <textarea></textarea>
-          <button type="submit">Send</button>
+        <h3>Contact Us</h3>
+        <form id="contact-form" class="contact-form" method="post" action="thanks.html">
+          <div class="contact-form">
+            <label for="fullname" class="contact-header">Full Name</label>
+            <div>
+              <input type="text" id="fullname" name="fullname" class="contact-control" required>
+            </div>
+          </div>
+          <div class="contact-form">
+            <label for="email" class="contact-header">Email</label>
+            <div>
+              <input type="email" id="email" name="youremail" class="contact-control" required>
+            </div>
+          </div>
+          <div class="contact-form">
+            <label for="subject" class="contact-header">Subject</label>
+            <div>
+              <input type="text" id="subject" name="subject" class="contact-control" required>
+            </div>
+            <div class="contact-form">
+              <label for="message" class="contact-header">Message</label>
+              <div>
+                <textarea id="message" name="yourmessage" class="contact-control" required></textarea>
+
+
+
+              </div>
+            </div>
+            <div class="contact-form">
+              <!-- adding submit/sent button-->
+              <button type="submit" class="contact-btn">Send</button>
+            </div>
+          </div>
         </form>
       </div>
-    </div>
+    </main>
     <div class="site-footer">
       &copy; 2021 Jam Box Studios
     </div>
